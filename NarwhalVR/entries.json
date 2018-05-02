@@ -6,7 +6,8 @@
 		"favoritePasta":"Macaroni"
 		},
 		{"name":"Alfred",
-		"color":7,
+		"color ":7,
+		"FOOD":FREE,
 		"speed":100,
 		"favoritePasta":"Spaghetti"},	
 		{"name":"Maxwell",
