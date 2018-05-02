@@ -21,7 +21,6 @@ xmlhttp.send();
 
 function getNames (data) {
     narwhalEntries = data.Charcthers;
-    console.log(narwhalEntries);
     createNarwhals();
 }
 function createNarwhals () {
@@ -101,7 +100,6 @@ for (var i = 0; i < 4; i++) {
             clearInterval(sizeTimer);
 
           sizeTimer = setInterval(function(){   
-            console.log(sizer);
             el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
           }, timer);
           if (el.object3D.scale.x < .3) {
