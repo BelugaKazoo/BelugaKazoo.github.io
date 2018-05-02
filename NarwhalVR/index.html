@@ -6,20 +6,25 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.0.2/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.1.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script> 
 
   </head>
   <body>
     <a-scene >
       <a-assets>
         <a-asset-item id="narwhal" src="assets/narwhal/scene.gltf"></a-asset-item>
+            <a-asset-item id="tree-obj" src="assets/Narwhal_Sketch.obj"></a-asset-item>
+
       </a-assets>
       <script src="sketch.js"></script>
+      <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" material="color: blue"></a-entity>
+
       <a-plane position="0 -4 0" rotation="-90 0 0" width="100" height="100" color="#acba13"></a-plane>
       <a-sky color="#6EBAA7"></a-sky>
       <a-entity id="river" src=# geometry="primitive: plane" material="color: blue"
           position="-10 0 0"></a-entity>
       <a-box></a-box>
-      <a-entity light="color:#BBB;type:ambient" data-aframe-default-light="" aframe-injected=""></a-entity>
+      <a-entity  gltf-part="src: #narwhal; part: chair"  material="color: blue"></a-entity>
   <!--     <a-sky id="image-360" radius="5" material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" > -->
         <a-text id="Narwhalopedia" align="center" Narwhalopedia value="~NARWHALOPEDIA~ \n" position="0 2 -6" ></a-text>
         <a-camera position="0,2,0">

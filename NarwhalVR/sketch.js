@@ -36,8 +36,10 @@ for (var i = 0; i < 4; i++) {
   narwhalEnt.setAttribute("id","modely"+i);
   narwhalEnt.setAttribute("modely"+i);
   narwhalEnt.setAttribute("gltf-model","#narwhal");
-  //console.log(narwhalEntries);
+  //console.log(narwhalEntries);"color: red"
   narwhalEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
+  narwhalEnt.setAttribute("material","color: #ff69b4");
+  console.log(narwhalEnt.getAttribute("gltf-model"));
 
  // narwhalEnt.setAttribute("name",narwhalNames[i%narwhalNames.length]); narwhalEntries[i%narwhalEntries.length].name
   var animation = document.createElement('a-animation');
