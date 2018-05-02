@@ -43,7 +43,7 @@ for (var i = 0; i < 4; i++) {
  // narwhalEnt.setAttribute("name",narwhalNames[i%narwhalNames.length]); narwhalEntries[i%narwhalEntries.length].name
   var animation = document.createElement('a-animation');
   animation.setAttribute("attribute","rotation");
-  animation.setAttribute("dur", "10000");
+  animation.setAttribute("dur", "100000");
   // animation.setAttribute("fill","forwards");
   animation.setAttribute("easing", "linear");
   animation.setAttribute("to","0 360 0");
