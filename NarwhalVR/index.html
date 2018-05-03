@@ -14,12 +14,12 @@
         <a-asset-item id="narwhal" src="assets/narwhal/scene.gltf"></a-asset-item>
         <a-asset-item id="tree-obj" src="assets/Narwhal_Sketch.obj"></a-asset-item>
         <a-asset-item id="rock" src="assets/rock/scene.gltf"></a-asset-item>
-         <a-asset-item id="land+grass" src="assets/landgrass/land+grass.obj"></a-asset-item>
-        <a-asset-item id="grass" src="assets/landgrass/land+grass.mtl"></a-asset-item>
+         <a-asset-item id="landobj" src="assets/land/ground.obj"></a-asset-item>
+        <a-asset-item id="landmtl" src="assets/land/ground.mtl"></a-asset-item>
       </a-assets>
       <script src="sketch.js"></script>
-<!--       <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" material="color: blue"></a-entity>
- -->      <!-- <a-entity obj-model="obj: #land+grass; mtl: #grass" position="0 -7 0" material="color: green; shader: flat"></a-entity> -->
+<!--       <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" material="color: blue"></a-entity> material="color: green; shader: flat"
+ -->      <a-entity obj-model="obj: #landobj; mtl: #landmtl" position="0 -2 0"></a-entity>
       
       <a-plane position="0 -2 0" rotation="-90 0 0" width="100" height="100" color="#acba13"></a-plane>
       <a-sky color="#006994"></a-sky>
