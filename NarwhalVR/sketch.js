@@ -1,3 +1,6 @@
+var html = document.getElementsByTagName('HTML'); html[0].style.position = 'initial'; html[0].style.overflow = 'scroll'; var canvas = document.querySelector('.a-canvas'); canvas.style.top = '1000px';
+
+
 var sizer = 1.01;
 var revSizer = 1.005;
 var timer = 16;
