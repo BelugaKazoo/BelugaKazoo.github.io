@@ -6,7 +6,7 @@ var sizer = 1.01;
 var revSizer = 1.005;
 var timer = 16;
 var f = 0;
-var rad = -7;
+// var rad = -7;
 
 var narwhalCount = 0;
 var narwhalEntries = [];
@@ -69,7 +69,7 @@ for (var i = 0; i < 4; i++) {
       init: function() {
         var data = this.data;
         var el = this.el;
-        el.object3D.position.set(f*2,f*3-2,rad);
+        el.object3D.position.set(f*2,f*3-2,-7);
         // el.object3D.rotation.set(0,0,180);
         f++;
         var pressTimer = null;
