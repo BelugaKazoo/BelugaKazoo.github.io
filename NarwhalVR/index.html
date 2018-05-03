@@ -12,13 +12,13 @@
     <a-scene >
       <a-assets>
         <a-asset-item id="narwhal" src="assets/narwhal/scene.gltf"></a-asset-item>
-            <a-asset-item id="tree-obj" src="assets/Narwhal_Sketch.obj"></a-asset-item>
+        <a-asset-item id="tree-obj" src="assets/Narwhal_Sketch.obj"></a-asset-item>
         <a-asset-item id="rock" src="assets/rock/scene.gltf"></a-asset-item>
 
       </a-assets>
       <script src="sketch.js"></script>
-<!--       <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" material="color: blue"></a-entity>
- -->
+      <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" material="color: blue"></a-entity>
+
       <a-plane position="0 -2 0" rotation="-90 0 0" width="100" height="100" color="#acba13"></a-plane>
       <a-sky color="#6EBAA7"></a-sky>
       <a-box position="0 0 -3.5" color="#white" scale="3 4 1"></a-box>
