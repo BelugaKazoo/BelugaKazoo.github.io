@@ -19,7 +19,7 @@
 		{"name":"Ainsly",
 		"color":2,
 		"speed":110,
-		"favoritePasta":"Ravioli},
+		"favoritePasta":"Ravioli"},
 		 		
 		{"name":"Remington",
 		"color":1,
@@ -54,12 +54,8 @@
 		{"name":"Harriet",
 		"color":2,
 		"speed":110,
-		"favoritePasta":"Prefers pizza"},
-		
-		{"name":"Harriet",
-		"color":2,
-		"speed":110,
 		"favoritePasta":"Prefers pizza"}
+
 	]
 }
 
