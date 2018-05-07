@@ -49,8 +49,6 @@ for (var i = 0; i < 17; i++) {
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
  // modelEnt.setAttribute("material","color: #ff69b4");
-      modelEnt.setAttribute("material","src: #tex"+i);
-
   console.log(modelEnt.getAttribute("dat"));
   //modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
   console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
@@ -69,6 +67,7 @@ for (var i = 0; i < 17; i++) {
       init: function() {
         var data = this.data;
         var el = this.el;
+        var collected = false;
         el.object3D.position.set(0,f*2.5,-15);
         f++;
         var pressTimer = null;
@@ -94,29 +93,33 @@ for (var i = 0; i < 17; i++) {
         }); 
         el.addEventListener('mouseenter', function(e) {
           //el.parentElement.getAttribute("sound").playSound();
-            el.parentElement.components.sound.playSound();
+           //el.parentElement.components.sound.playSound();
           el.parentElement.appendChild(text);
           text.setAttribute("value", el.getAttribute("dat") + "\n" + el.getAttribute("dat").speed);
         //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
           longpress = false;
           clearInterval(sizeTimer);
-          sizeTimer = setInterval(function(){   
-            el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
-          }, timer);
-          if (el.object3D.scale.x < .1) {
-            console.log("long click");
-            narwhalCount++;
-            var opedia = sceneEl.querySelector('#Narwhalopedia');
-            opedia.setAttribute('value',opedia.getAttribute('value') + el.getAttribute('dat').name + "\n");
+          if (collected == false) {
+            sizeTimer = setInterval(function(){   
+              el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
+            }, timer);
+            if (el.object3D.scale.x < .1 ) {
+                    modelEnt.setAttribute("material","src: #tex"+0);
 
-            var explosion = sceneEl.querySelector('#explosion');
-            explosion.setAttribute("position",el.getAttribute("position"));
-            el.parentElement.appendChild(explosion);
-            console.log(el.getAttribute("position"));
-            console.log(explosion.getAttribute("position"));
-            el.parentElement.removeChild(el);
-            longpress = true;
+              console.log("long click");
+              collected = true;
+              narwhalCount++;
+              var opedia = sceneEl.querySelector('#Narwhalopedia');
+              opedia.setAttribute('value',opedia.getAttribute('value') + el.getAttribute('dat').name + "\n");
+              var explosion = sceneEl.querySelector('#explosion');
+              explosion.setAttribute("position",el.getAttribute("position"));
+              el.parentElement.appendChild(explosion);
+              console.log(el.getAttribute("position"));
+              console.log(explosion.getAttribute("position"));
+             // el.parentElement.removeChild(el);
+              longpress = true;
+            }
           }
         });
       }
@@ -124,4 +127,3 @@ for (var i = 0; i < 17; i++) {
   }
 }
 var colors = ["feb5ae","fd5331","fdc58b","e5f4df","a5bfcc"];
-//ff69b4"
