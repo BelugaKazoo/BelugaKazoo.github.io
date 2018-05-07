@@ -24,7 +24,7 @@ function getNames (data) {
     createNarwhals();
 }
 function createNarwhals () {
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 1; i++) {
   var sceneEl = document.querySelector('a-scene');
   var grandPar = document.createElement('a-entity');
   var modelEnt = document.createElement('a-entity');
@@ -57,7 +57,7 @@ for (var i = 0; i < 10; i++) {
       init: function() {
         var data = this.data;
         var el = this.el;
-        el.object3D.position.set(0,f*2.5-2,-7);
+        el.object3D.position.set(0,f*2.5,-7);
         f++;
         var pressTimer = null;
         var sizeTimer = null;
@@ -95,8 +95,13 @@ for (var i = 0; i < 10; i++) {
             narwhalCount++;
             var opedia = sceneEl.querySelector('#Narwhalopedia');
             opedia.setAttribute('value',opedia.getAttribute('value') + el.getAttribute('dat').name + "\n");
-            console.log(el.parentElement);
-            sceneEl.removeChild(el.parentElement.parentElement);
+
+            var explosion = sceneEl.querySelector('#explosion');
+            explosion.setAttribute("position",el.getAttribute("position"));
+            el.parentElement.appendChild(explosion);
+            console.log(el.getAttribute("position"));
+            console.log(explosion.getAttribute("position"));
+            el.parentElement.removeChild(el);
             longpress = true;
           }
         });
