@@ -44,7 +44,7 @@ for (var i = 0; i < 17; i++) {
 
   modelEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
   modelEnt.setAttribute("dat",narwhalEntries[i%narwhalEntries.length].name);
-  parEnt.setAttribute("sound","src: #pickupSound");
+  parEnt.setAttribute("sound","src: #pickupSound; autoplay: true");
   //caughtNarwhalSFX.setAttribute("id","sound");
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
