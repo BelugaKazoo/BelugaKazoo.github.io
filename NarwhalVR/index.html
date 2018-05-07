@@ -6,7 +6,7 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.0.2/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.1.1/dist/aframe-event-set-component.min.js"></script>
-
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   </head>
   <body>
     <a-scene >
@@ -43,6 +43,9 @@
             <a-cursor>
             </a-cursor>
           </a-camera>  
+        
+        <!-- particle system -->
+      <a-entity position="0 2 -10" particle-system="texture:assets/narwhal.png; duration:0.75; size:5; particleCount:50;" rotation="" scale="" visible=""></a-entity>
    <!--  </a-sky>  -->        
     </a-scene>
   </body> 
