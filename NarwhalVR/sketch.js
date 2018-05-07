@@ -29,6 +29,8 @@ for (var i = 0; i < 10; i++) {
   var grandPar = document.createElement('a-entity');
   var modelEnt = document.createElement('a-entity');
   var parEnt = document.createElement('a-entity');
+  var caughtNarwhalSFX = document.createElement('a-entity');
+
 
   sceneEl.appendChild(grandPar);
   grandPar.appendChild(parEnt)
@@ -40,6 +42,9 @@ for (var i = 0; i < 10; i++) {
   modelEnt.setAttribute("gltf-model","#narwhal");
   modelEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
   modelEnt.setAttribute("dat",narwhalEntries[i%narwhalEntries.length].name);
+  
+  caughtNarwhalSFX.setAttribute("id","sound");
+
 
   modelEnt.setAttribute("material","color: #ff69b4");
   console.log(modelEnt.getAttribute("dat"));
