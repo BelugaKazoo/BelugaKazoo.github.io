@@ -77,7 +77,6 @@ for (var i = 0; i < 10; i++) {
         var data = this.data;
         var el = this.el;
         el.object3D.position.set(0,f*2.5-2,-7);
-        // el.object3D.rotation.set(0,0,180);
         f++;
         var pressTimer = null;
         var sizeTimer = null;
@@ -85,22 +84,14 @@ for (var i = 0; i < 10; i++) {
         var gracePeriod = 0;
         var sceneEl = document.querySelector('a-scene');
         el.addEventListener('mouseleave', function(e) {
-          // if (pressTimer !== null) {
-          //   clearTimeout(pressTimer);
-            clearInterval(sizeTimer);
-          //   pressTimer = null;
-          // }
-          // if (longpress) {
-          //   return false;
-          // }
+          clearInterval(sizeTimer);
           sizeTimer = setInterval(function(){   
             if (el.object3D.scale.x > 1) {
-            clearInterval(sizeTimer);
+              clearInterval(sizeTimer);
             }
             if (gracePeriod > 100) {
                 el.object3D.scale.set(el.object3D.scale.x*revSizer,el.object3D.scale.y*revSizer,el.object3D.scale.z*revSizer);
-              //      el.setAttribute("position",{z: el.getAttribute("position").z * rezSizer})
-
+             //   el.setAttribute("position",{z: el.getAttribute("position").z * rezSizer})
             }
             else {
                 gracePeriod++;
@@ -108,37 +99,27 @@ for (var i = 0; i < 10; i++) {
           }, timer);
           console.log('mouse up');          
           sceneEl.appendChild(text);
-
         }); 
-        
         el.addEventListener('mouseenter', function(e) {
           el.appendChild(text);
           text.setAttribute("value", el.getAttribute('name'));
-         /// console.log("FFF")
           console.log("mouse down");
           gracePeriod = 0;
           longpress = false;
-            clearInterval(sizeTimer);
-           // rotate(20);
-
+          clearInterval(sizeTimer);
           sizeTimer = setInterval(function(){   
-          //  el.setAttribute("position",{z: el.getAttribute("position")/sizer})
-            //el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
+         /// el.setAttribute("position",{z: el.getAttribute("position")/sizer})
+          el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
           }, timer);
           if (el.object3D.scale.x < .3) {
-            console.log("long click");
-            narwhalCount++;
-            //narwhalNames.push(el.getAttribute('name'));
-            var opedia = sceneEl.querySelector('#Narwhalopedia');
-            //console.log(opedia);
-            opedia.setAttribute('value',opedia.getAttribute('value') + el.getAttribute('name') + "\n");
-            console.log(el.parentElement);
-
-           /// var narwhal = sceneEl.querySelector('#'+el.getAttribute('id'));
-            sceneEl.removeChild(el.parentElement.parentElement);
-            //sceneEl.querySelector('#UItext').setAttribute('value',"Narwhal Count: " + narwhalCount);
-            longpress = true;
-          }
+          console.log("long click");
+          narwhalCount++;
+          var opedia = sceneEl.querySelector('#Narwhalopedia');
+          opedia.setAttribute('value',opedia.getAttribute('value') + el.getAttribute('name') + "\n");
+          console.log(el.parentElement);
+          sceneEl.removeChild(el.parentElement.parentElement);
+          longpress = true;
+        }
         });
       }
     });
