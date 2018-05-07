@@ -105,6 +105,7 @@ for (var i = 0; i < 4; i++) {
           gracePeriod = 0;
           longpress = false;
             clearInterval(sizeTimer);
+            rotate(20);
 
           sizeTimer = setInterval(function(){   
             el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
@@ -144,3 +145,10 @@ for (var i = 0; i < 4; i++) {
 
 // }
 // loop();
+
+
+/*
+r = 7
+c = 2 * Math.PI * 7
+
+*/
