@@ -48,6 +48,9 @@ for (var i = 0; i < 10; i++) {
 
   modelEnt.setAttribute("material","color: #ff69b4");
   console.log(modelEnt.getAttribute("dat"));
+  modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
+  console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
+  console.log(modelEnt.getAttribute("dat"));
   var animation = document.createElement('a-animation');
   animation.setAttribute("attribute","rotation");
   animation.setAttribute("dur", "100000");
@@ -114,3 +117,5 @@ for (var i = 0; i < 10; i++) {
     });
   }
 }
+var colors = ["feb5ae","fd5331","fdc58b","e5f4df","a5bfcc"];
+//ff69b4"
