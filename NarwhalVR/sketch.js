@@ -29,7 +29,7 @@ for (var i = 0; i < 17; i++) {
   var grandPar = document.createElement('a-entity');
   var modelEnt = document.createElement('a-entity');
   var parEnt = document.createElement('a-entity');
-  var caughtNarwhalSFX = document.createElement('a-entity');
+ // var caughtNarwhalSFX = document.createElement('a-entity');
 
 
   sceneEl.appendChild(grandPar);
@@ -44,8 +44,8 @@ for (var i = 0; i < 17; i++) {
 
   modelEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
   modelEnt.setAttribute("dat",narwhalEntries[i%narwhalEntries.length].name);
-  
-  caughtNarwhalSFX.setAttribute("id","sound");
+  parEnt.setAttribute("sound","src: #pickupSound");
+  //caughtNarwhalSFX.setAttribute("id","sound");
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
  // modelEnt.setAttribute("material","color: #ff69b4");
@@ -93,6 +93,8 @@ for (var i = 0; i < 17; i++) {
           sceneEl.appendChild(text);
         }); 
         el.addEventListener('mouseenter', function(e) {
+          //el.parentElement.getAttribute("sound").playSound();
+            el.parentElement.components.sound.playSound();
           el.appendChild(text);
           text.setAttribute("value", el.getAttribute("dat") + "\n" + el.getAttribute("dat").speed);
         //console.log(el.getAttribute("dat").name);
