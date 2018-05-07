@@ -24,7 +24,7 @@ function getNames (data) {
     createNarwhals();
 }
 function createNarwhals () {
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 17; i++) {
   var sceneEl = document.querySelector('a-scene');
   var grandPar = document.createElement('a-entity');
   var modelEnt = document.createElement('a-entity');
@@ -48,11 +48,11 @@ for (var i = 0; i < 10; i++) {
   caughtNarwhalSFX.setAttribute("id","sound");
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
-  modelEnt.setAttribute("material","color: #ff69b4");
-      modelEnt.setAttribute("material","src:" +);
+ // modelEnt.setAttribute("material","color: #ff69b4");
+      modelEnt.setAttribute("material","src: #tex"+i);
 
   console.log(modelEnt.getAttribute("dat"));
-  modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
+  //modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
   console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
   console.log(modelEnt.getAttribute("dat"));
   var animation = document.createElement('a-animation');
