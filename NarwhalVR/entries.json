@@ -20,7 +20,8 @@
 		"color":2,
 		"speed":110,
 		"favoritePasta":"Ravioli},
-		 		{"name":"Remington",
+		 		
+		{"name":"Remington",
 		"color":1,
 		"speed":50,
 		"favoritePasta":"Farfalle"},
