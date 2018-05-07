@@ -24,7 +24,7 @@ function getNames (data) {
     createNarwhals();
 }
 function createNarwhals () {
-for (var i = 0; i < 1; i++) {
+for (var i = 0; i < 10; i++) {
   var sceneEl = document.querySelector('a-scene');
   var grandPar = document.createElement('a-entity');
   var modelEnt = document.createElement('a-entity');
