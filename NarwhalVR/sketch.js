@@ -39,14 +39,18 @@ for (var i = 0; i < 10; i++) {
 
   modelEnt.setAttribute("id","modely"+i);
   modelEnt.setAttribute("modely"+i);
-  modelEnt.setAttribute("gltf-model","#narwhal");
+  //modelEnt.setAttribute("gltf-model","#narwhal");
+  modelEnt.setAttribute("obj-model","obj:#narwhalobj");
+
   modelEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
   modelEnt.setAttribute("dat",narwhalEntries[i%narwhalEntries.length].name);
   
   caughtNarwhalSFX.setAttribute("id","sound");
-
-
+  //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
+  // modelEnt.object3D.scale.set(0);
   modelEnt.setAttribute("material","color: #ff69b4");
+      modelEnt.setAttribute("material","src:" +);
+
   console.log(modelEnt.getAttribute("dat"));
   modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
   console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
@@ -65,7 +69,7 @@ for (var i = 0; i < 10; i++) {
       init: function() {
         var data = this.data;
         var el = this.el;
-        el.object3D.position.set(0,f*2.5,-7);
+        el.object3D.position.set(0,f*2.5,-15);
         f++;
         var pressTimer = null;
         var sizeTimer = null;
@@ -98,7 +102,7 @@ for (var i = 0; i < 10; i++) {
           sizeTimer = setInterval(function(){   
             el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
           }, timer);
-          if (el.object3D.scale.x < .3) {
+          if (el.object3D.scale.x < .1) {
             console.log("long click");
             narwhalCount++;
             var opedia = sceneEl.querySelector('#Narwhalopedia');
