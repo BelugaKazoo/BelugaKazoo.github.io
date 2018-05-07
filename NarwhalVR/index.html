@@ -14,35 +14,72 @@
         <a-asset-item id="narwhal" src="assets/narwhal/scene.gltf"></a-asset-item>
                 <a-asset-item id="narwhalobj" src="assets/narwhal/narwhalobj.obj"></a-asset-item>
 
+
         <a-asset-item id="tree-obj" src="assets/Narwhal_Sketch.obj"></a-asset-item>
         <a-asset-item id="rock" src="assets/rock/scene.gltf"></a-asset-item>
+
+
+
+
+
+
         <a-asset-item id="landobj" src="assets/land/ground.obj"></a-asset-item>
         <audio id="pickupSound" src="assets/audio/caughtnarwhal.mp3"></audio>
-                  <a-img id="tex0" src="assets/textures/tex0.jpg"></a-img>
-                  <a-img id="tex1" src="assets/textures/tex1.jpg"></a-img>
-                  <a-img id="tex2" src="assets/textures/tex2.jpg"></a-img>
-                  <a-img id="tex3" src="assets/textures/tex3.jpg"></a-img>
-                  <a-img id="tex4" src="assets/textures/tex4.jpg"></a-img>
-                  <a-img id="tex5" src="assets/textures/tex5.jpg"></a-img>
-                  <a-img id="tex6" src="assets/textures/tex6.jpg"></a-img>
-                  <a-img id="tex7" src="assets/textures/tex7.jpg"></a-img>
-                  <a-img id="tex8" src="assets/textures/tex8.jpg"></a-img>
-                  <a-img id="tex9" src="assets/textures/tex9.jpg"></a-img>
-                  <a-img id="tex10" src="assets/textures/tex10.jpg"></a-img>
-                  <a-img id="tex11" src="assets/textures/tex11.jpg"></a-img>
-                  <a-img id="tex12" src="assets/textures/tex12.jpg"></a-img>
-                  <a-img id="tex13" src="assets/textures/tex13.jpg"></a-img>
-                  <a-img id="tex14" src="assets/textures/tex14.jpg"></a-img>
-                  <a-img id="tex15" src="assets/textures/tex15.jpg"></a-img>
-                  <a-img id="tex13" src="assets/textures/tex16.jpg"></a-img>
-                  <a-img id="tex14" src="assets/textures/tex17.jpg"></a-img>
-                  <a-img id="tex15" src="assets/textures/tex18.jpg"></a-img>
+        <a-img id="tex0" src="assets/textures/tex0.jpg"></a-img>
+        <a-img id="tex1" src="assets/textures/tex1.jpg"></a-img>
+        <a-img id="tex2" src="assets/textures/tex2.jpg"></a-img>
+        <a-img id="tex3" src="assets/textures/tex3.jpg"></a-img>
+        <a-img id="tex4" src="assets/textures/tex4.jpg"></a-img>
+        <a-img id="tex5" src="assets/textures/tex5.jpg"></a-img>
+        <a-img id="tex6" src="assets/textures/tex6.jpg"></a-img>
+        <a-img id="tex7" src="assets/textures/tex7.jpg"></a-img>
+        <a-img id="tex8" src="assets/textures/tex8.jpg"></a-img>
+        <a-img id="tex9" src="assets/textures/tex9.jpg"></a-img>
+        <a-img id="tex10" src="assets/textures/tex10.jpg"></a-img>
+        <a-img id="tex11" src="assets/textures/tex11.jpg"></a-img>
+        <a-img id="tex12" src="assets/textures/tex12.jpg"></a-img>
+        <a-img id="tex13" src="assets/textures/tex13.jpg"></a-img>
+        <a-img id="tex14" src="assets/textures/tex14.jpg"></a-img>
+        <a-img id="tex15" src="assets/textures/tex15.jpg"></a-img>
+        <a-img id="tex16" src="assets/textures/tex16.jpg"></a-img>
+        <a-img id="tex17" src="assets/textures/tex17.jpg"></a-img>
+        <a-img id="tex18" src="assets/textures/tex18.jpg"></a-img>
+
+
+
+
         <a-asset-item id="landmtl" src="assets/land/ground.mtl"></a-asset-item>
+
+
+       <!--  HOW TO LOAD A OBJ -->
+        <a-asset-item id="seaweedobj" src="assets/seaweed/seaweed.obj"></a-asset-item>
+
+        <!-- HOW TO LOAD A MTL -->
+        <a-asset-item id="seaweedmtl" src="assets/seaweed/seaweed.mtl"></a-asset-item>
+
       </a-assets>
       <script src="sketch.js"></script>
+
+
+
+
+     <!--  PLACE A MODEL IN THE SCENE -->
+      <a-entity obj-model="obj: #seaweedobj;  mtl: #seaweedmtl" position="0 -2 0"></a-entity>
+
+
+
+
+
+
 <!--       <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" material="color: blue; src: #tex"></a-entity> material="color: green; shader: flat"#landmtl -->
-     <a-entity obj-model="obj: #landobj; " position="0 -2 0" material="color: #c2b280; "></a-entity>
-      
+     <a-entity obj-model="obj: #landobj; mtl: # " position="0 -2 0" material="color: #c2b280; "></a-entity>
+
+
+
+
+
+
+
       <a-plane position="0 -2 0" rotation="-90 0 0" width="100" height="100" color="#acba13"></a-plane>
       <a-sky color="#006994"></a-sky>
       <a-box position="0 0 -3.5" color="white" scale="3 4 1"></a-box>
@@ -52,10 +89,11 @@
 <!--       <a-entity  gltf-part="src: #narwhal; part: chair"  material="color: blue"></a-entity>
  -->  <!--     <a-sky id="image-360" radius="5" material="sid
  e: double; color: #EF2D5E; transparent: true; opacity: 0.5" > -->
-             <a-text id="UItext" value="Narwhal Count: 0" color="black" position="0 1.5 12">
-               <a-plane color="black" position="15 2 0" width=".1" height="3" ></a-plane>
-                              <a-plane color="black" position="-20 2 0" width=".1" height="3" ></a-plane>
 
+
+             <a-text id="UItext" value="Narwhal Count: 0" color="black" position="0 0 -3">
+               <a-plane color="black" position="3 2 0" width=".1" height="3" ></a-plane>
+                              <a-plane color="black" position="-3 2 0" width=".1" height="3" ></a-plane>
              </a-text>
 
         <a-camera position="0,2,0">

@@ -95,7 +95,7 @@ for (var i = 0; i < 17; i++) {
         el.addEventListener('mouseenter', function(e) {
           //el.parentElement.getAttribute("sound").playSound();
             el.parentElement.components.sound.playSound();
-          el.appendChild(text);
+          el.parentElement.appendChild(text);
           text.setAttribute("value", el.getAttribute("dat") + "\n" + el.getAttribute("dat").speed);
         //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
