@@ -7,7 +7,7 @@
 		},
 		
 		{"name":"Alfred",
-		"color ":7,
+		"color ":4,
 		"speed":100,
 		"favoritePasta":"Spaghetti"},	
 		
@@ -27,7 +27,7 @@
 		"favoritePasta":"Farfalle"},
 		
 		{"name":"Rutherford",
-		"color":5,
+		"color":3,
 		"speed":95,
 		"favoritePasta":"Penne"},
 		
@@ -42,7 +42,7 @@
 		"favoritePasta":"Pappardelle"},
 		
 		{"name":"Clementine",
-		"color":8,
+		"color":3,
 		"speed":150,
 		"favoritePasta":"Tortellini"},
 		
