@@ -49,6 +49,8 @@ for (var i = 0; i < 17; i++) {
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
  // modelEnt.setAttribute("material","color: #ff69b4");
+      modelEnt.setAttribute("material","src: #tex"+i);
+
   console.log(modelEnt.getAttribute("dat"));
   //modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
   console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
@@ -105,8 +107,6 @@ for (var i = 0; i < 17; i++) {
               el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
             }, timer);
             if (el.object3D.scale.x < .1 ) {
-                    modelEnt.setAttribute("material","src: #tex"+0);
-
               console.log("long click");
               collected = true;
               narwhalCount++;
