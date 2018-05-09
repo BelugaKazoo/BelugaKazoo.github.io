@@ -51,7 +51,7 @@ for (var i = 0; i < 17; i++) {
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
  // modelEnt.setAttribute("material","color: #ff69b4");
-//  modelEnt.setAttribute("material","src: #tex"+i);
+  modelEnt.setAttribute("material","src: #tex"+i);
   //modelEnt.setAttribute("material","src: ");
 
   console.log(modelEnt.getAttribute("dat"));
@@ -120,7 +120,7 @@ for (var i = 0; i < 17; i++) {
               el.parentElement.appendChild(explosion);
               console.log(el.getAttribute("position"));
               console.log(explosion.getAttribute("position"));
-              el.setAttribute("material","src: #tex"+0);
+           //   el.setAttribute("material","src: #tex"+0);
               console.log(el.getAttribute("material"));
              // el.parentElement.removeChild(el);
               longpress = true;
