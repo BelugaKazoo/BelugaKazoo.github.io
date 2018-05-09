@@ -38,6 +38,8 @@ for (var i = 0; i < 17; i++) {
   parEnt.setAttribute("rotation",{y: i*(Math.random() * 360)});
 
   modelEnt.setAttribute("id","modely"+i);
+    modelEnt.setAttribute("id","modely"+0);
+
   modelEnt.setAttribute("modely"+i);
   //modelEnt.setAttribute("gltf-model","#narwhal");
   modelEnt.setAttribute("obj-model","obj:#narwhalobj");
@@ -49,11 +51,12 @@ for (var i = 0; i < 17; i++) {
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
  // modelEnt.setAttribute("material","color: #ff69b4");
-      modelEnt.setAttribute("material","src: #tex"+i);
+//  modelEnt.setAttribute("material","src: #tex"+i);
+  //modelEnt.setAttribute("material","src: ");
 
   console.log(modelEnt.getAttribute("dat"));
   //modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
-  console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
+  //console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
   console.log(modelEnt.getAttribute("dat"));
   var animation = document.createElement('a-animation');
   animation.setAttribute("attribute","rotation");
@@ -117,6 +120,8 @@ for (var i = 0; i < 17; i++) {
               el.parentElement.appendChild(explosion);
               console.log(el.getAttribute("position"));
               console.log(explosion.getAttribute("position"));
+              el.setAttribute("material","src: #tex"+0);
+              console.log(el.getAttribute("material"));
              // el.parentElement.removeChild(el);
               longpress = true;
             }
@@ -126,4 +131,4 @@ for (var i = 0; i < 17; i++) {
     });
   }
 }
-var colors = ["feb5ae","fd5331","fdc58b","e5f4df","a5bfcc"];
+// var colors = ["feb5ae","fd5331","fdc58b","e5f4df","a5bfcc"];
