@@ -6,7 +6,7 @@ var f = 0;
 var narwhalCount = 0;
 var narwhalEntries = [];
 var narwhalNames = ["Clive","Alfred","Maxwell","Ainsley"];
-
+var belugeInfect = 3;
 var xmlhttp = new XMLHttpRequest();
 var url = "entries.json";
 
@@ -42,8 +42,6 @@ for (var i = 0; i < 15; i++) {
   var grandPar = document.createElement('a-entity');
   var modelEnt = document.createElement('a-entity');
   var parEnt = document.createElement('a-entity');
- // var caughtNarwhalSFX = document.createElement('a-entity');
-
 
   sceneEl.appendChild(grandPar);
   grandPar.appendChild(parEnt)
@@ -51,35 +49,31 @@ for (var i = 0; i < 15; i++) {
   parEnt.setAttribute("rotation",{y: i*(Math.random() * 360)});
 
   modelEnt.setAttribute("id","modely"+i);
-    modelEnt.setAttribute("id","modely"+0);
+  modelEnt.setAttribute("id","modely"+0);
+  var randomBeluge = Math.random() >= 0.5;
+      modelEnt.setAttribute("modely"+i); 
 
-  modelEnt.setAttribute("modely"+i);
-  //modelEnt.setAttribute("gltf-model","#narwhal");
-  modelEnt.setAttribute("obj-model","obj:#narwhalobj");
+  if (randomBeluge && belugeInfect > 0) {
+    modelEnt.setAttribute("obj-model","obj:#belugeobj");
+    modelEnt.setAttribute("name","OH NO!");
+    modelEnt.setAttribute("pasta","BELUGA KAZOO!");
+    belugeInfect--;
+  }
+  else {
+    modelEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
+    modelEnt.setAttribute("pasta","Loves to eat " + narwhalEntries[i%narwhalEntries.length].favoritePasta);
+    modelEnt.setAttribute("obj-model","obj:#narwhalobj");
+  }
 
-  modelEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
-  modelEnt.setAttribute("dat",narwhalEntries[i%narwhalEntries.length].name);
-    modelEnt.setAttribute("pasta",narwhalEntries[i%narwhalEntries.length].favoritePasta);
 
-  // parEnt.setAttribute("sound","src: #pickupSound; autoplay: true");
-  //caughtNarwhalSFX.setAttribute("id","sound");
-  //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
-  // modelEnt.object3D.scale.set(0);
- // modelEnt.setAttribute("material","color: #ff69b4");
+
   modelEnt.setAttribute("material","src: #tex"+i);
-  //modelEnt.setAttribute("material","src: ");
 
-  console.log(modelEnt.getAttribute("dat"));
-  //modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
-  //console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
-  console.log(modelEnt.getAttribute("dat"));
   var animation = document.createElement('a-animation');
   animation.setAttribute("attribute","rotation");
   animation.setAttribute("dur", "100000");
   animation.setAttribute("easing", "linear");
-  animation.setAttribute("to","0 360 0");
-  // modelEnt.setAttribute("sound","on: click; src: #pickupSound");
-  animation.setAttribute("repeat","indefinite");
+  animation.setAttribute("to","0 360 0");  animation.setAttribute("repeat","indefinite");
   grandPar.appendChild(animation);
   var text = sceneEl.querySelector('#UItext');
   var outline = sceneEl.querySelector('#UIOutline');
@@ -152,7 +146,7 @@ for (var i = 0; i < 15; i++) {
             }
           }
           else {
-            text.setAttribute("value", el.getAttribute("dat") + "\n Loves to eat " + el.getAttribute("pasta"));
+            text.setAttribute("value", el.getAttribute("name") + "\n" + el.getAttribute("pasta"));
           }
         });
       }
@@ -160,3 +154,18 @@ for (var i = 0; i < 15; i++) {
   }
 }
 // var colors = ["feb5ae","fd5331","fdc58b","e5f4df","a5bfcc"];
+
+ // var caughtNarwhalSFX = document.createElement('a-entity');
+
+  //modelEnt.setAttribute("gltf-model","#narwhal");
+
+  // parEnt.setAttribute("sound","src: #pickupSound; autoplay: true");
+  //caughtNarwhalSFX.setAttribute("id","sound");
+  //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
+  // modelEnt.object3D.scale.set(0);
+ // modelEnt.setAttribute("material","color: #ff69b4");
+  //modelEnt.setAttribute("material","src: ");
+
+  //modelEnt.setAttribute("material","color: #"+colors[narwhalEntries[i%narwhalEntries.length].color]);
+  //console.log(colors[narwhalEntries[i%narwhalEntries.length].color]);
+  // modelEnt.setAttribute("sound","on: click; src: #pickupSound");
