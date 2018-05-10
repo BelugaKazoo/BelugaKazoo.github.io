@@ -50,9 +50,9 @@ for (var i = 0; i < 15; i++) {
 
   modelEnt.setAttribute("id","modely"+i);
   modelEnt.setAttribute("id","modely"+0);
-  var randomBeluge = Math.random() >= 0.5;
+  var randomBeluge = Math.random() >= 0.3;
       modelEnt.setAttribute("modely"+i); 
-
+  console.log(randomBeluge);
   if (randomBeluge && belugeInfect > 0) {
     modelEnt.setAttribute("obj-model","obj:#belugeobj");
     modelEnt.setAttribute("name","OH NO!");
