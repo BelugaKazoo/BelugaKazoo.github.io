@@ -103,27 +103,25 @@ for (var i = 0; i < 15; i++) {
             }
           }, timer);
           console.log('mouse up');          
-          //sceneEl.appendChild(text);
-                              sceneEl.appendChild(outline);
-
+          sceneEl.appendChild(outline);
           outline.setAttribute("position",{ x:0,y: -100,z:0});
 
         }); 
         el.addEventListener('mouseenter', function(e) {
           //el.parentElement.getAttribute("sound").playSound();
            //el.parentElement.components.sound.playSound();
-          el.parentElement.appendChild(text);
           el.appendChild(outline);
           outline.setAttribute("position",{ x:0,y: 0,z:0});
-
-          console.log(el.getAttribute("position").y);
-          text.setAttribute("position",{x:0,y: .25,z:-3});
-
-        //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
           longpress = false;
           clearInterval(sizeTimer);
-                       text.setAttribute("value", "???");
+          if (text.parentElement != el.parentElement) {
+                      el.parentElement.appendChild(text);
+                      text.setAttribute("position",{x:0,y: .25,z:-3});
+
+          }
+            text.setAttribute("value", "???");
+
 
           if (collected == false) {
             sizeTimer = setInterval(function(){   
