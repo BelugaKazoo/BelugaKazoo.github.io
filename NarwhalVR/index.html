@@ -38,8 +38,8 @@
         <img id="tex14" src="assets/textures/tex14.jpg"></img>
         <img id="tex15" src="assets/textures/tex15.jpg"></img>
         <img id="tex16" src="assets/textures/tex16.jpg"></img>
-        <img id="tex17" src="assets/textures/tex17.png"></img>
-        <img id="tex18" src="assets/textures/tex18.png"></img>
+        <img id="tex17" src="assets/textures/tex17.jpg"></img>
+        <img id="tex18" src="assets/textures/tex18.jpg"></img>
 
         <a-asset-item id="landobj" src="assets/land/ground1.obj"></a-asset-item>
         <a-asset-item id="landmtl" src="assets/land/ground1.mtl"></a-asset-item>
@@ -93,7 +93,7 @@
       <a-box position="0 0 -3.5" color="white" scale="3 4 1"></a-box> -->
 
       <a-text id="UItext" align="center" value="Narwhal Count: 0" color="black" position="0 1.5 -3">
-        <a-plane color="white" width="2.5" height=".75"></a-plane>
+        <a-plane color="white" width="2.5" height=".75" position="0 0 -0.01"></a-plane>
       </a-text>
 
 
@@ -106,16 +106,15 @@
         <a-plane color="#acba13" position="0 1 0" width="38" height=".5" ></a-plane>
 
       </a-entity>
-      <a-camera position="0 4 0">
-        <a-image src="#title" position="0 0 -1">
-            <a-animation attribute="opacity"
+      <a-camera position="0,4,0">
+        <a-image src="title">
+                 <a-animation attribute="opacity"
                dur="7000"
                fill="forwards"
                from="1"
                to="0"
                repeat="0"
-               easing="ease-in"></a-animation>
-        </a-image>
+               easing="ease-in"></a-animation><a-image>
           <a-cursor></a-cursor>
       </a-camera>
 
