@@ -82,7 +82,7 @@ for (var i = 0; i < 15; i++) {
         var data = this.data;
         var el = this.el;
         var collected = false;
-        el.object3D.position.set(0,f*2.5,-15);
+        el.object3D.position.set(0,(f*2.5)+4,-15);
         f++;
         var pressTimer = null;
         var sizeTimer = null;
@@ -113,10 +113,11 @@ for (var i = 0; i < 15; i++) {
           //el.parentElement.getAttribute("sound").playSound();
            //el.parentElement.components.sound.playSound();
           el.parentElement.appendChild(text);
-                    el.appendChild(outline);
+          el.appendChild(outline);
+          outline.setAttribute("position",{ x:0,y: 0,z:0});
 
           console.log(el.getAttribute("position").y);
-          text.setAttribute("position",{x:0,y: 1.5,z:-3});
+          text.setAttribute("position",{x:0,y: .25,z:-3});
 
         //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
