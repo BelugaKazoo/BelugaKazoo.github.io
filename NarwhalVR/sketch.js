@@ -19,12 +19,27 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
+AFRAME.registerComponent("title", {
+          init: function() {
+          var el = this.el;
+          console.log("FUCK YEAH2");
+
+         el.addEventListener('animationend', function(e) {
+          console.log("FUCK YEAH");
+                    el.setAttribute("position",{ x:0,y: -100,z:0});
+
+      });
+   }
+});
+
 function getNames (data) {
     narwhalEntries = data.Charcthers;
+
     createNarwhals();
 }
 function createNarwhals () {
-for (var i = 0; i < 17; i++) {
+
+for (var i = 0; i < 15; i++) {
   var sceneEl = document.querySelector('a-scene');
   var grandPar = document.createElement('a-entity');
   var modelEnt = document.createElement('a-entity');
@@ -48,7 +63,7 @@ for (var i = 0; i < 17; i++) {
   modelEnt.setAttribute("dat",narwhalEntries[i%narwhalEntries.length].name);
     modelEnt.setAttribute("pasta",narwhalEntries[i%narwhalEntries.length].favoritePasta);
 
-  parEnt.setAttribute("sound","src: #pickupSound; autoplay: true");
+  // parEnt.setAttribute("sound","src: #pickupSound; autoplay: true");
   //caughtNarwhalSFX.setAttribute("id","sound");
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
   // modelEnt.object3D.scale.set(0);
@@ -65,7 +80,7 @@ for (var i = 0; i < 17; i++) {
   animation.setAttribute("dur", "100000");
   animation.setAttribute("easing", "linear");
   animation.setAttribute("to","0 360 0");
-
+  // modelEnt.setAttribute("sound","on: click; src: #pickupSound");
   animation.setAttribute("repeat","indefinite");
   grandPar.appendChild(animation);
   var text = sceneEl.querySelector('#UItext');
@@ -99,7 +114,7 @@ for (var i = 0; i < 17; i++) {
           //sceneEl.appendChild(text);
                               sceneEl.appendChild(outline);
 
-          //text.setAttribute("position",{ x:0,y: -100,z:0});
+          outline.setAttribute("position",{ x:0,y: -100,z:0});
 
         }); 
         el.addEventListener('mouseenter', function(e) {
@@ -115,9 +130,9 @@ for (var i = 0; i < 17; i++) {
           gracePeriod = 0;
           longpress = false;
           clearInterval(sizeTimer);
-          if (collected == false) {
-             text.setAttribute("value", "???");
+                       text.setAttribute("value", "???");
 
+          if (collected == false) {
             sizeTimer = setInterval(function(){   
               el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
             }, timer);
@@ -138,9 +153,9 @@ for (var i = 0; i < 17; i++) {
               longpress = true;
             }
           }
-           else {
-              text.setAttribute("value", el.getAttribute("dat") + "\n Loves to eat " + el.getAttribute("pasta"));
-            }
+          else {
+            text.setAttribute("value", el.getAttribute("dat") + "\n Loves to eat " + el.getAttribute("pasta"));
+          }
         });
       }
     });
