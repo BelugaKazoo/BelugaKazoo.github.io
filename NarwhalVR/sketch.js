@@ -111,12 +111,13 @@ for (var i = 0; i < 17; i++) {
           console.log(el.getAttribute("position").y);
           text.setAttribute("position",{x:0,y: 1.5,z:-3});
 
-          text.setAttribute("value", el.getAttribute("dat") + "\n Loves to eat " + el.getAttribute("pasta"));
         //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
           longpress = false;
           clearInterval(sizeTimer);
           if (collected == false) {
+             text.setAttribute("value", "???");
+
             sizeTimer = setInterval(function(){   
               el.object3D.scale.set(el.object3D.scale.x/sizer,el.object3D.scale.y/sizer,el.object3D.scale.z/sizer);
             }, timer);
@@ -124,8 +125,8 @@ for (var i = 0; i < 17; i++) {
               console.log("long click");
               collected = true;
               narwhalCount++;
-              var opedia = sceneEl.querySelector('#Narwhalopedia');
-              opedia.setAttribute('value',opedia.getAttribute('value') + el.getAttribute('dat').name + "\n");
+              // var opedia = sceneEl.querySelector('#Narwhalopedia');
+              // opedia.setAttribute('value',opedia.getAttribute('value') + el.getAttribute('dat').name + "\n");
               var explosion = sceneEl.querySelector('#explosion');
               explosion.setAttribute("position",el.getAttribute("position"));
               el.parentElement.appendChild(explosion);
@@ -137,6 +138,9 @@ for (var i = 0; i < 17; i++) {
               longpress = true;
             }
           }
+           else {
+              text.setAttribute("value", el.getAttribute("dat") + "\n Loves to eat " + el.getAttribute("pasta"));
+            }
         });
       }
     });
