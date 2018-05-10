@@ -96,10 +96,10 @@ for (var i = 0; i < 17; i++) {
             }
           }, timer);
           console.log('mouse up');          
-          sceneEl.appendChild(text);
+          //sceneEl.appendChild(text);
                               sceneEl.appendChild(outline);
 
-          text.setAttribute("position",{ x:0,y: -100,z:0});
+          //text.setAttribute("position",{ x:0,y: -100,z:0});
 
         }); 
         el.addEventListener('mouseenter', function(e) {
