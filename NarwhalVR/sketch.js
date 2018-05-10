@@ -97,13 +97,16 @@ for (var i = 0; i < 17; i++) {
           }, timer);
           console.log('mouse up');          
           sceneEl.appendChild(text);
+          text.setAttribute("position",{ x:0,y: -100,z:0});
+
         }); 
         el.addEventListener('mouseenter', function(e) {
           //el.parentElement.getAttribute("sound").playSound();
            //el.parentElement.components.sound.playSound();
           el.parentElement.appendChild(text);
           console.log(el.getAttribute("position").y);
-        //  text.setAttribute("position",{x: text.getAttribute("position").x, y: el.getAttribute("position").y,z: text.getAttribute("position").z});
+          text.setAttribute("position",{x:0,y: 1.5,z:-3});
+
           text.setAttribute("value", el.getAttribute("dat") + "\n Loves to eat " + el.getAttribute("pasta"));
         //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
