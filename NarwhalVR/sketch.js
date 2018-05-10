@@ -69,7 +69,7 @@ for (var i = 0; i < 17; i++) {
   animation.setAttribute("repeat","indefinite");
   grandPar.appendChild(animation);
   var text = sceneEl.querySelector('#UItext');
-
+  var outline = sceneEl.querySelector('#UIOutline');
   AFRAME.registerComponent('modely'+i, {
       init: function() {
         var data = this.data;
@@ -97,6 +97,8 @@ for (var i = 0; i < 17; i++) {
           }, timer);
           console.log('mouse up');          
           sceneEl.appendChild(text);
+                              sceneEl.appendChild(outline);
+
           text.setAttribute("position",{ x:0,y: -100,z:0});
 
         }); 
@@ -104,6 +106,8 @@ for (var i = 0; i < 17; i++) {
           //el.parentElement.getAttribute("sound").playSound();
            //el.parentElement.components.sound.playSound();
           el.parentElement.appendChild(text);
+                    el.appendChild(outline);
+
           console.log(el.getAttribute("position").y);
           text.setAttribute("position",{x:0,y: 1.5,z:-3});
 
