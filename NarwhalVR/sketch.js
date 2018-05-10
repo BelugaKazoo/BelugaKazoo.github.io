@@ -1,6 +1,6 @@
 var sizer = 1.01;
 var revSizer = 1.005;
-var timer = 16;
+var timer = 10;
 var f = 0;
 
 var narwhalCount = 0;
@@ -22,10 +22,8 @@ xmlhttp.send();
 AFRAME.registerComponent("title", {
           init: function() {
           var el = this.el;
-          console.log("FUCK YEAH2");
 
          el.addEventListener('animationend', function(e) {
-          console.log("FUCK YEAH");
                     el.setAttribute("position",{ x:0,y: -100,z:0});
 
       });
