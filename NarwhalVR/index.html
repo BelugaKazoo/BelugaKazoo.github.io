@@ -11,6 +11,7 @@
   <body>
     <a-scene >
       <a-assets>
+        <img id="title" src="assets/title-withoutbg.png"></a-assets>
 
         <a-asset-item id="narwhal" src="assets/narwhal/scene.gltf"></a-asset-item>
         <a-asset-item id="narwhalobj" src="assets/narwhal/narwhalobj.obj"></a-asset-item>
@@ -20,25 +21,25 @@
         <audio id="pickupSound" src="assets/audio/caughtnarwhal.mp3"></audio>
         <audio id="music" src="assets/audio/song1_memo.mp3"></audio>
 
-        <a-img id="tex0" src="assets/textures/tex0.jpg"></a-img>
-        <a-img id="tex1" src="assets/textures/tex1.jpg"></a-img>
-        <a-img id="tex2" src="assets/textures/tex2.jpg"></a-img>
-        <a-img id="tex3" src="assets/textures/tex3.jpg"></a-img>
-        <a-img id="tex4" src="assets/textures/tex4.jpg"></a-img>
-        <a-img id="tex5" src="assets/textures/tex5.jpg"></a-img>
-        <a-img id="tex6" src="assets/textures/tex6.jpg"></a-img>
-        <a-img id="tex7" src="assets/textures/tex7.jpg"></a-img>
-        <a-img id="tex8" src="assets/textures/tex8.jpg"></a-img>
-        <a-img id="tex9" src="assets/textures/tex9.jpg"></a-img>
-        <a-img id="tex10" src="assets/textures/tex10.jpg"></a-img>
-        <a-img id="tex11" src="assets/textures/tex11.jpg"></a-img>
-        <a-img id="tex12" src="assets/textures/tex12.jpg"></a-img>
-        <a-img id="tex13" src="assets/textures/tex13.jpg"></a-img>
-        <a-img id="tex14" src="assets/textures/tex14.jpg"></a-img>
-        <a-img id="tex15" src="assets/textures/tex15.jpg"></a-img>
-        <a-img id="tex16" src="assets/textures/tex16.jpg"></a-img>
-        <a-img id="tex17" src="assets/textures/tex17.jpg"></a-img>
-        <a-img id="tex18" src="assets/textures/tex18.jpg"></a-img>
+        <img id="tex0" src="assets/textures/tex0.jpg"></img>
+        <img id="tex1" src="assets/textures/tex1.jpg"></img>
+        <img id="tex2" src="assets/textures/tex2.jpg"></img>
+        <img id="tex3" src="assets/textures/tex3.jpg"></img>
+        <img id="tex4" src="assets/textures/tex4.jpg"></img>
+        <img id="tex5" src="assets/textures/tex5.jpg"></img>
+        <img id="tex6" src="assets/textures/tex6.jpg"></img>
+        <img id="tex7" src="assets/textures/tex7.jpg"></img>
+        <img id="tex8" src="assets/textures/tex8.jpg"></img>
+        <img id="tex9" src="assets/textures/tex9.jpg"></img>
+        <img id="tex10" src="assets/textures/tex10.jpg"></img>
+        <img id="tex11" src="assets/textures/tex11.jpg"></img>
+        <img id="tex12" src="assets/textures/tex12.jpg"></img>
+        <img id="tex13" src="assets/textures/tex13.jpg"></img>
+        <img id="tex14" src="assets/textures/tex14.jpg"></img>
+        <img id="tex15" src="assets/textures/tex15.jpg"></img>
+        <img id="tex16" src="assets/textures/tex16.jpg"></img>
+        <img id="tex17" src="assets/textures/tex17.png"></img>
+        <img id="tex18" src="assets/textures/tex18.png"></img>
 
         <a-asset-item id="landobj" src="assets/land/ground1.obj"></a-asset-item>
         <a-asset-item id="landmtl" src="assets/land/ground1.mtl"></a-asset-item>
@@ -105,7 +106,16 @@
         <a-plane color="#acba13" position="0 1 0" width="38" height=".5" ></a-plane>
 
       </a-entity>
-      <a-camera position="0,4,0">
+      <a-camera position="0 4 0">
+        <a-image src="#title" position="0 0 -1">
+            <a-animation attribute="opacity"
+               dur="7000"
+               fill="forwards"
+               from="1"
+               to="0"
+               repeat="0"
+               easing="ease-in"></a-animation>
+        </a-image>
           <a-cursor></a-cursor>
       </a-camera>
 
