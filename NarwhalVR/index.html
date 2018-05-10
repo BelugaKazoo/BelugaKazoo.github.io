@@ -84,7 +84,7 @@
       <a-entity obj-model="obj: #landobj; mtl: # " position="0 -2 0" material="color: #94d0ef" scale="1.25 1 1.25"></a-entity>
 
 
-      <a-plane position="0 -2 0" rotation="-90 0 0" width="100" height="100" color="#acba13"></a-plane>
+      <a-plane position="0 -2 0" rotation="-90 0 0" width="100" height="100" color="#94d0ef"></a-plane>
 <!-- 
       <a-text id="Narwhalopedia" align="center" color="black" position="0 2 -3" Narwhalopedia value="~NARWHALOPEDIA~ \n" ></a-text>
       <a-text id="viewNarwhals" align="center" color="black" position="0 1.75 -3" Narwhalopedia value="view your Narwhals!" ></a-text>
@@ -107,15 +107,16 @@
 
       </a-entity>
       <a-camera position="0,4,0">
-        <a-image src="#title">
-                 <a-animation attribute="opacity"
+
+          <a-cursor></a-cursor>
+                  <a-image src="#title" position ="0 0 -.9" opacity="0">
+              <a-animation attribute="opacity"
                dur="7000"
                fill="forwards"
                from="1"
                to="0"
                repeat="0"
-               easing="ease-in"></a-animation><a-image>
-          <a-cursor></a-cursor>
+               easing="ease-in"></a-animation></a-image>
       </a-camera>
 
         <!-- particle system -->
