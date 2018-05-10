@@ -46,6 +46,8 @@ for (var i = 0; i < 17; i++) {
 
   modelEnt.setAttribute("name",narwhalEntries[i%narwhalEntries.length].name);
   modelEnt.setAttribute("dat",narwhalEntries[i%narwhalEntries.length].name);
+    modelEnt.setAttribute("pasta",narwhalEntries[i%narwhalEntries.length].favoritePasta);
+
   parEnt.setAttribute("sound","src: #pickupSound; autoplay: true");
   //caughtNarwhalSFX.setAttribute("id","sound");
   //modelEnt.setAttribute("scale",{x: 0.75, y: 0.75, z: 0.75})
@@ -101,8 +103,8 @@ for (var i = 0; i < 17; i++) {
            //el.parentElement.components.sound.playSound();
           el.parentElement.appendChild(text);
           console.log(el.getAttribute("position").y);
-          text.setAttribute("position",{y: el.getAttribute("position").y});
-          text.setAttribute("value", el.getAttribute("dat") + "\n" + el.getAttribute("dat").speed);
+        //  text.setAttribute("position",{x: text.getAttribute("position").x, y: el.getAttribute("position").y,z: text.getAttribute("position").z});
+          text.setAttribute("value", el.getAttribute("dat") + "\n Loves to eat " + el.getAttribute("pasta"));
         //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
           longpress = false;
