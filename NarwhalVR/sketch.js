@@ -100,6 +100,8 @@ for (var i = 0; i < 17; i++) {
           //el.parentElement.getAttribute("sound").playSound();
            //el.parentElement.components.sound.playSound();
           el.parentElement.appendChild(text);
+          console.log(el.getAttribute("position").y);
+          text.setAttribute("position",{y: el.getAttribute("position").y});
           text.setAttribute("value", el.getAttribute("dat") + "\n" + el.getAttribute("dat").speed);
         //console.log(el.getAttribute("dat").name);
           gracePeriod = 0;
